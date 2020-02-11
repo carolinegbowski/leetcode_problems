@@ -23,5 +23,8 @@ def twoSum(nums, target):
                 index_list.append(index_2)
                 return index_list
 
-# does not work when both nubmers are the same, but at different indicies
+twoSum([2,7,11,15], 9)
+twoSum([3,3], 6)
+
+# does not work when both nubmers are the same, but at different indicies (example 2)
 # need to modify here
