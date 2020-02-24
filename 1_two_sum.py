@@ -14,17 +14,22 @@ return [0, 1].
 
 def twoSum(nums, target):
     index_list = []
-    for num in nums:
-        index_1 = nums.index(num)
-        for each_remaining_num in nums[(index_1+1):]:
-            index_2 = nums.index(each_remaining_num)
-            if num + each_remaining_num == target:
-                index_list.append(index_1)
-                index_list.append(index_2)
+    for num in nums: 
+        remainder = target - num
+        if remainder in nums:
+            index1 = nums.index(num)
+            index_list.append(index1)
+            index2 = nums.index(remainder)
+            if index2 not in index_list:
+                index_list.append(index2)
                 return index_list
+            else:
+                occurrence = [i for i, n in enumerate(nums) if n == remainder]
+                if len(occurrence) > 1:
+                    index2 = occurrence[1]
+                    index_list.append(index2)
+                    return index_list
+                else: 
+                    index_list = []
 
 twoSum([2,7,11,15], 9)
-twoSum([3,3], 6)
-
-# does not work when both nubmers are the same, but at different indicies (example 2)
-# need to modify here
