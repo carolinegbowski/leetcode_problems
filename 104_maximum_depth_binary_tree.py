@@ -43,7 +43,7 @@ Submissions
 # Given binary tree [3,9,20,null,null,15,7],
 
 class Solution:
-    def maxDepth(self, root: TreeNode) -> int:
+    def maxDepth(self, root):
         if not root: 
             return 0
         else:
