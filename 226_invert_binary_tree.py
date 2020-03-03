@@ -44,7 +44,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you canâ
 
 
 class Solution:
-    def invertTree(self, root: TreeNode) -> TreeNode:    
+    def invertTree(self, root):    
         if not root: 
             return None
         else: 
