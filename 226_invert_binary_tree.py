@@ -34,11 +34,11 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you canâ
 """
 
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 # [4,2,7,1,3,6,9]
 
