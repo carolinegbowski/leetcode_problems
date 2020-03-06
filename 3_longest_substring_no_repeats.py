@@ -30,10 +30,20 @@ Explanation: The answer is "wke", with the length of 3.
 
 
 def lengthOfLongestSubstring(s):
+    # will keep track of my current longest string
     output = []
+    # will keep track of my MAX length
     max_length = 0
+    # will keep track of my current length
     length = 0
+    # iterate
     for i in range(len(s)):
+        # if letter is already in output 
+        # store length if greater than max_length
+        # find index of 1st repeat letter in output
+        # append 2nd repeat letter
+        # change output to output from after 1st repeat letter on
+        # set current length = length of our new output
         if s[i] in output: 
             if length > max_length:
                 max_length = length
@@ -41,9 +51,11 @@ def lengthOfLongestSubstring(s):
             output.append(s[i])
             output = output[index+1:]
             length = len(output)
+        # append letter, increment length by 1
         else: 
             length += 1
             output.append(s[i])
+        # return either current length or max_length, which ever is bigger
     return max(len(output), max_length)
 
 print(lengthOfLongestSubstring("abcabcbb"))
