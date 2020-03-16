@@ -27,3 +27,10 @@ def isPalindrome(self, s: str) -> bool:
     s = s.lower()
     s = ''.join([x for x in s if x.isalnum()])
     return s == s[::-1]
+
+
+
+x = input("How are you? ")
+y = input("how old are you? ")
+y = int(y)
+print(x * y)
