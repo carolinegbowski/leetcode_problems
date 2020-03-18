@@ -30,7 +30,6 @@ Output: 4
 
 def singleNumber(nums):
     nums.sort()
-    count = 0 
     i = 0
     while i+1 < len(nums):
         if nums[i] == nums[i+1]:
@@ -41,3 +40,16 @@ def singleNumber(nums):
 
 
 singleNumber([4,1,2,1,2])
+
+def singleNumberAlternativeSolution(nums):
+    data = {}
+    for i in nums: 
+        if i in data:
+            data[i] +=1
+        else: 
+            data[i] = 1
+    for k,v in data.items():
+        if v == 1: 
+            return k
+
+singleNumberAlternativeSolution([4,1,2,1,2])
