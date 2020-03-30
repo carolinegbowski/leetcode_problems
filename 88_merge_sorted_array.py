@@ -27,28 +27,28 @@ Output: [1,2,2,3,5,6]
 
 
 
-def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-    """
-    Do not return anything, modify nums1 in-place instead.
-    """
-    i1 = 0
-    i2 = 0
-    if nums2 == []:
-        return nums1
-    for i in range(n):
-        nums1.pop()
-    if nums1 == []:
-        nums1 += nums2[i2:]
-        return nums1
+# def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+#     """
+#     Do not return anything, modify nums1 in-place instead.
+#     """
+#     i1 = 0
+#     i2 = 0
+#     if nums2 == []:
+#         return nums1
+#     for i in range(n):
+#         nums1.pop()
+#     if nums1 == []:
+#         nums1 += nums2[i2:]
+#         return nums1
     
-    while nums2[i2] <= nums1[m-1]:
-        if nums2[i2] < nums1[i1]:
-            nums1.insert(i1-1, nums2[i2])
-            i2 += 1
-        else: 
-            i1 +=1
-    if nums2[i2:]:
-        nums1 += nums2[i2:]
+#     while nums2[i2] <= nums1[m-1]:
+#         if nums2[i2] < nums1[i1]:
+#             nums1.insert(i1-1, nums2[i2])
+#             i2 += 1
+#         else: 
+#             i1 +=1
+#     if nums2[i2:]:
+#         nums1 += nums2[i2:]
         
 """
 Input:
@@ -84,3 +84,11 @@ Failed case....
     #     else: 
     #         idx += 1
         
+
+def merge(nums1, m, nums2, n):
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        
+        nums1[:] = sorted(nums1[:m] + nums2)
+
